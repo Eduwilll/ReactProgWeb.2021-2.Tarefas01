@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            Crie uma classe chamada "FuncionarioComissionado" com ES6, que herdará os métodos da 
+            classe "Funcionario". A classe "Funcionario" deve ter os seguintes métodos: 
+            constructor(nome, numCTPS, salario) e mostrarDados() para retornar todos os dados de um 
+            funcionário. A classe "FuncionarioComissionado" deve ter os seguintes métodos: 
+            constructor(nome, numCTPS, salario, venda, comissao) e mostrarDados() para retornar todos 
+            os dados de um funcionário comissionado. Em seguida, crie um objeto de cada uma das classes 
+            e mostre os respectivos dados no browser.
+        </div>
+        <script>
+            class Funcionario {
+                constructor(nome , numCTPS, salario){
+                    this.nome = nome;
+                    this.numCTPS = numCTPS;
+                    this.salario = salario;
+
+                }
+
+                mostrarDados(){
+                    return  "<br/>Funcionario Nome:" + this.nome + " Numero CTPS:" + this.numCTPS + " Salario:" + this.salario
+                }
+            }
+
+            class FuncionarioComissado extends Funcionario{
+                constructor(nome, numCTPS, salario, venda, comissao){
+                    super(nome, numCTPS, salario);
+                    this.venda = venda;
+                    this.comissao = comissao;
+                }
+
+                mostrar(){
+                    return "<br/>" + this.mostrarDados() +
+                    "venda:" + this.venda +
+                    " comissado:" + this.comissao;
+                }
+            }
+            funcionrio = new Funcionario("Jean","897563","R$3000")
+            document.write(funcionrio.mostrarDados()); 
+            funcionrioComissado = new FuncionarioComissado("Ronaldo","95975563","R$5000","50", "8%");
+            document.write(funcionrioComissado.mostrar()); 
+
+        </script>
+
+    </div>
+</body>
+</html>
